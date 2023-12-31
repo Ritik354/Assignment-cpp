@@ -31,14 +31,14 @@ public:
         cout<<"Default constructor called"<<endl;
 
     }
-   person operator+(person p)
+   person operator+(person &p)
     {
     cout<<"Operator + called"<<endl;
 
-      person temp;
+      person temp,t;
       temp.age = age + p.age;
       temp.rank = rank + p.rank;
-      return temp;
+      return age>0?temp:t;
     }
 
   person operator++() //Pre Increment
@@ -74,11 +74,11 @@ int main()
     person p2 = p1;
     person p3 = p1 + p2;
 
-    (++p3).display();
-    (p3++).display();
-     p3.display();
+    //(++p3).display();
+    //(p3++).display();
+     //p3.display();
 
-    cout<<p3<<p1;
+    //cout<<p3<<p1;
 
 
     cout<<"Prateek age "<<p1.getAge()<<" and Rank "<<p1.getRank()<<endl;

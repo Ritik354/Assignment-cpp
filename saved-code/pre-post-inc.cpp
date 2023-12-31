@@ -42,7 +42,7 @@ public:
         n = x.n;
     }
     friend ostream& operator<<(ostream &os, Increment i);
-    
+    friend istream& operator>>(istream &os, Increment i);
 };
 ostream& operator<<(ostream &os , Increment i)
     {
@@ -50,6 +50,13 @@ ostream& operator<<(ostream &os , Increment i)
     os<< "friend Incremented value is " << i.n<< endl;
     return os;
     }
+istream& operator>>(istream &os , Increment i)
+    {
+    
+    
+    os>>i;
+    return os;
+    }   
 int main()
 {
     Increment i1(5), i2(10), c3;
@@ -59,5 +66,6 @@ int main()
     (i2++).display();
     i2.display();
     cout<<i2<<i1;
+    cin>>i2>>i1;
     return 0;
 }

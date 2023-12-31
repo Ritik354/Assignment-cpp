@@ -44,6 +44,24 @@ public:
         temp.img = img - C.img;
         return temp;
     }
+    Complex operator*(Complex C)
+    {
+        cout<<" operator * called"<<endl;
+        Complex temp;
+        temp.real = real * C.real;
+        temp.img = img   * C.img ;
+        return temp;
+    }
+    void operator==(Complex C)
+    {
+        if(real ==C.real&& img == C.img)
+        {
+            cout<<"given complex numbers are equal"<<endl;
+        }else
+        {
+            cout<<"are not equal"<<endl;
+        }
+    }
     int getreal()
     {
         return real;
@@ -52,22 +70,28 @@ public:
     {
         return img;
     }
+    void display()
+    {
+        cout << "Real = " << getreal() << " + "<< "Imaginary = " << getimaginary() << "i" << endl;
+    }
 };
 int main()
 {
-    Complex c1(12, 48), c3, c4(2, 8), c5;
+    Complex c1(12, 48), c3, c4(2, 8), c5,c6;
     Complex c2 = c1;
-    c3 = c1 + c2; // c1.operator+(c2);
-    c5 = c1 - c4; // c1.operator-(c4);
-    cout << "Real = " << c1.getreal() << " + "
-         << "Imaginary = " << c1.getimaginary() << "i" << endl;
-    cout << "Real = " << c2.getreal() << " + "
-         << "Imaginary = " << c2.getimaginary() << "i" << endl;
-    cout << "Real = " << c3.getreal() << " + "
-         << "Imaginary = " << c3.getimaginary() << "i" << endl;
-    cout << "Real = " << c4.getreal() << " + "
-         << "Imaginary = " << c4.getimaginary() << "i" << endl;
-    cout << "Real = " << c5.getreal() << " + "
-         << "Imaginary = " << c5.getimaginary() << "i" << endl;
+    c3 = c1 + c2; // c1.operator+(c2);plus operator overloading
+    c5 = c1 - c4; // c1.operator-(c4);minus oerator overloading
+    c6 = c4 * c5; // c4.operator*(c5);multiply operator overloading
+    c1.operator==(c2);//== operator called
+    c1.display();
+    
+    c2.display();
+    cout<<"sum is"<<endl;
+    c3.display();
+    c4.display();
+    cout<<"subtraction is"<<endl;
+    c5.display();
+    cout<<"multiplication is"<<endl;
+    c6.display();
     return 0;
 }
