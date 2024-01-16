@@ -11,10 +11,7 @@ struct Book
     char title[20];
     float price;
 };
-strcut inputbook()
-{
-    
-}
+
 int main()
 {
     struct Book b1 ={1,"C",99.9};
