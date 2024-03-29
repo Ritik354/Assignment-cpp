@@ -27,6 +27,7 @@ class Rupee
 
 class Dollar
 {
+
     int d;
     public:
     Dollar()
